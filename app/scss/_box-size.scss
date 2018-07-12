@@ -1,0 +1,5 @@
+@mixin box-size ($max-w, $h) {
+    max-width: $max-w;
+    height: $h;
+    width: 100%;
+}

@@ -1,0 +1,542 @@
+@import 'node_modules/bootstrap/scss/bootstrap';
+@import '../../node_modules/font-awesome/scss/font-awesome';
+@font-face {
+    font-family: "FontAwesome";
+    font-family: "FontAwesome";
+    src: url("../fonts/fontawesome-webfont.eot");
+    src: url("../fonts/fontawesome-webfont.eot") format("embedded-opentype"), url("../fonts/fontawesome-webfont.woff") format("woff"), url("../fonts/fontawesome-webfont.ttf") format("truetype"), url("../fonts/fontawesome-webfont.svg") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+
+;
+@font-face {
+    font-family: "FuturaStd-Condensed";
+    src: url("../fonts/FuturaStd-Condensed.otf");
+}
+
+;
+@import 'fonts';
+@import 'variables';
+@import 'box-size';
+@import 'background';
+@import 'size';
+@import 'link';
+@import 'line';
+@import 'circle';
+@import 'box';
+body {
+    background-color: $white;
+    font-family: "FuturaStd-Condensed";
+}
+
+a {
+    color: $white;
+    &:hover {
+        color: $white;
+        text-decoration: none;
+    }
+}
+
+.link {
+    @extend %link;
+}
+
+.line {
+    @extend %line;
+}
+
+.text-blue {
+    color: #56bcbb;
+}
+
+.pt-100 {
+    padding-top: 100px;
+}
+
+.pb-100 {
+    padding-bottom: 100px;
+}
+
+.mt-100 {
+    margin-top: 100;
+}
+
+.mt-50 {
+    margin-top: 50px;
+}
+
+//header starts
+header {
+    @include box-size(1920px,
+    950px);
+    @include background($bg-color,
+    '../images/sec1/2.png');
+    color: $white;
+    overflow: hidden;
+    .container {
+        height: 100%;
+    }
+    .triangle {
+        position: relative;
+        &::before {
+            position: absolute;
+            content: "";
+            @include size(0px,
+            0px);
+            border-bottom: 950px solid $blue-dark;
+            border-right: 100vw solid transparent;
+            display: block;
+            box-sizing: border-box;
+        }
+    }
+    .row {
+        z-index: 1;
+    }
+    .scroll {
+        cursor: pointer;
+        &:hover {
+            &::before {
+                color: $blue-light;
+            }
+        }
+        &::before {
+            font-family: "FontAwesome";
+            content: "\f078";
+        }
+    }
+    @media (max-width: 768px) {
+        height: auto;
+    }
+}
+
+//header ends
+//about-us starts
+#about {
+    h1 {
+        color: $txt-dark;
+    }
+    .line {
+        max-width: 576px;
+    }
+    p {
+        color: $txt-light;
+        @include box-size(653px,
+        154px);
+        @media (max-width: 768px) {
+            height: auto;
+        }
+        @media (min-width: 1200px) {
+            height: 154px;
+        }
+    }
+    .title {
+        @include box-size(653px,
+        141px);
+        @media (max-width: 768px) {
+            height: auto;
+        }
+        @media (max-width: 1200px) {
+            margin-bottom: 40px;
+        }
+        @media (min-width: 1200px) {
+            height: 141px;
+            margin-bottom: 30px;
+        }
+    }
+    .square-shape {
+        position: relative;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        transform: rotate(-45deg);
+        top: -105px;
+        left: 40%;
+        @media (max-width: 768px) {
+            transform: rotate(0deg);
+            top: 0px;
+            left: 0px;
+            flex-wrap: wrap;
+            justify-content: center;
+            flex-direction: row;
+        }
+        ;
+        @media (max-width: 1200px) {
+            flex-wrap: wrap;
+            transform: rotate(0deg);
+            flex-direction: row;
+            top: 0px;
+            left: 0px;
+            justify-content: center;
+        }
+        @media (max-width: 1450px) {
+            transform: rotate(0deg);
+            top: 0px;
+            left: 0px;
+        }
+        @media only screen and (min-width: 1450px) {
+            position: relative;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            transform: rotate(-45deg);
+            top: -80px;
+            left: 10%;
+            max-width: 320px;
+        }
+    }
+    .square-shape-1 {
+        bottom: 100px;
+        right: -10%;
+        top: -180px;
+        position: relative;
+        transform: rotate(45deg);
+        @media (max-width: 768px) {
+            transform: rotate(0deg);
+            top: 0px;
+            bottom: 0px;
+            right: 0px;
+            justify-content: center;
+            flex-direction: row;
+        }
+        ;
+        @media (max-width: 1200px) {
+            transform: rotate(0deg);
+            right: 0px;
+            top: 0px;
+            justify-content: center;
+        }
+        @media (min-width: 1200px) {
+            right: 80%;
+            top: -120px;
+            justify-content: flex-end;
+        }
+        ;
+        @media only screen and (min-width: 1450px) {
+            bottom: 100px;
+            right: 25%;
+            top: -230px;
+            position: relative;
+            transform: rotate(45deg);
+            justify-content: center;
+        }
+    }
+    .shape {
+        @include size(280px,
+        280px);
+        margin: 10px;
+        @media (max-width: 768px) {
+            @include size(300px, 300px);
+        }
+        @media (min-width: 1200px) {
+            @include size(280px,
+            280px);
+            transform: rotate(45deg);
+        }
+        ;
+        @media only screen and (min-width: 1450px) {
+            transform: rotate(0deg);
+        }
+    }
+    .square-1 {
+        @include background($bg-color,
+        '../images/sec2/rawpixel-com-252130.png');
+        background-size: auto;
+        background-position: center;
+        @media (min-width: 1200px) {
+            margin-bottom: 110px;
+        }
+        ;
+        @media only screen and (min-width: 1450px) {
+            margin-bottom: 0px;
+            margin-left: 40px;
+        }
+    }
+    .square-2 {
+        background-color: $blue-light;
+        @media only screen and (min-width: 1450px) {
+            margin-left: 40px;
+        }
+    }
+    .square-3 {
+        @include background($bg-color,
+        '../images/sec2/olu-eletu-38647.png');
+        @media (min-width: 1200px) {
+            transform: rotate(0deg);
+        }
+    }
+}
+
+//our porfolio
+#portfolio {
+    @include box-size(1920px,
+    1303px);
+    @include background($bg-color,
+    '../images/sec3/Layer 2.png');
+    color: $white;
+    padding-top: 100px;
+    .line {
+        max-width: 692px;
+    }
+    .section-2-content {
+        @include box-size(514px,
+        351px);
+        padding: 20px 50px;
+        &:hover {
+            box-shadow: 10.5px 18.187px 21px rgba(167, 167, 167, 0.7);
+            background-color: rgba(255, 255, 255, 0.050980392156862744);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        ;
+        a {
+            &::before {
+                z-index: -1;
+            }
+        }
+        p {
+            max-width: 459px;
+        }
+        @media (max-width: 768px) {
+            height: auto;
+        }
+        @media (min-width:1200px) {
+            height: 351px;
+        }
+    }
+    .citate {
+        @include box-size(1143px,
+        96px);
+        @media (max-width: 768px) {
+            height: auto;
+            margin-bottom: 50px;
+        }
+        @media (min-width:1200px) {
+            @include box-size(1143px,
+            96px);
+            margin-bottom: 0px;
+        }
+    }
+    @media (max-width: 768px) {
+        height: auto;
+    }
+    @media (min-width:1200px) {
+        height: 1303px;
+    }
+}
+
+//our advisors
+#advisors {
+    h1 {
+        color: $txt-dark;
+    }
+    .line {
+        max-width: 675px;
+    }
+    .round-image {
+        @extend %circle;
+        margin-right: 15px;
+    }
+    .r-img-1 {
+        @include background($black,
+        '../images/sec4/Layer\ 9.png');
+    }
+    .r-img-2 {
+        @include background($black,
+        '../images/sec4/Layer\ 10.png');
+    }
+    .r-img-3 {
+        @include background($black,
+        '../images/sec4/Layer\ 11.png');
+    }
+    .r-img-4 {
+        @include background($black,
+        '../images/sec4/Layer\ 12.png');
+    }
+    .r-img-5 {
+        @include background($black,
+        '../images/sec4/ADM_William_H._McRaven_2012.png');
+    }
+    .box {
+        @extend %box;
+        @media (max-width: 768px) {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        @media (max-width: 1200px) {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            .box-list h2 {
+                text-align: center;
+            }
+        }
+        @media (min-width:1200px) {
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+        }
+    }
+    h1.citate-1 {
+        @include box-size(653px,
+        91px);
+        letter-spacing: -2px;
+        @media (max-width: 768px) {
+            height: auto;
+            text-align: center;
+        }
+        @media (min-width:1200px) {
+            @include box-size(653px,
+            91px);
+            text-align: left;
+        }
+    }
+    .citate-2 {
+        @include box-size(555px,
+        91px);
+        text-align: right;
+        @media (max-width: 768px) {
+            height: auto;
+            margin-top: 30px;
+        }
+        @media (max-width: 992px) {
+            text-align: left;
+        }
+        @media (min-width:1200px) {
+            @include box-size(555px,
+            91px);
+            margin-top: 0px;
+        }
+    }
+    li {
+        @extend %box;
+        &::before {
+            @include size(7px,
+            7px);
+            border-radius: 4px;
+            background-color: $point;
+            content: "";
+            display: block;
+            margin-right: 10px;
+        }
+    }
+}
+
+//our investors
+#investors {
+    @include box-size(1920px,
+    950px);
+    @include background($bg-color,
+    '../images/sec5/bg-sec5.png');
+    color: $white;
+    .line {
+        max-width: 659px;
+    }
+    .citate-3 {
+        @include box-size(653px,
+        192px);
+        @media (max-width: 768px) {
+            height: auto;
+        }
+        ;
+        @media (min-width: 1200px) {
+            @include box-size(653px,
+            192px);
+        }
+    }
+    .talks {
+        margin: 30px 0px;
+    }
+    .horowitz {
+        position: relative;
+        bottom: 30px;
+        margin-left: 40px;
+        @media (max-width: 768px) {
+            bottom: 0px;
+            top: 30px;
+            margin-left: 0px;
+        }
+    }
+    @media (max-width: 768px) {
+        height: auto;
+        padding-bottom: 100px;
+    }
+    @media (min-width: 1200px) {
+        padding-bottom: 0px;
+        @include box-size(1920px,
+        950px);
+    }
+}
+
+//footer
+footer {
+    @include box-size(1920px,
+    50px);
+    @extend %box;
+    background-color: $blue-light;
+    p {
+        color: $white;
+        margin: 0 auto;
+        @media (max-width: 768px) {
+            text-align: center;
+            padding: 20px;
+        }
+        @media (min-width: 1200px) {
+            padding: 0px;
+        }
+    }
+    @media (max-width: 768px) {
+        height: auto;
+    }
+    ;
+    @media (min-width: 1200px) {
+        @include box-size(1920px,
+        50px);
+    }
+}
+
+//scrollbar
+.scrollbar {
+    position: fixed;
+    right: 30px;
+    top: 0;
+    bottom: 0;
+    width: 0;
+    z-index: 555;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-end;
+    justify-content: center;
+    overflow: visible;
+    transition: right 1s ease-in-out;
+    li {
+        @extend %box;
+        margin: 20px;
+        a {
+            @include size(12px,
+            12px);
+            border-radius: 6px;
+            &::before {
+                @include size(12px,
+                12px);
+                border-radius: 6px;
+                content: "";
+                display: block;
+            }
+        }
+    }
+    .list-active {
+        &::before {
+            background-color: $blue-light;
+        }
+    }
+    @media (max-width: 768px) {
+        right: 1px;
+    }
+}
+
+.bgw {
+    background-color: $white;
+}
+
+.bgb {
+    background-color: $bg-color;
+}

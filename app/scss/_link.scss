@@ -1,0 +1,28 @@
+%link {
+    @include size(180px, 50px);
+    border: 2px solid $blue-light;
+    line-height: 50px;
+    text-align: center;
+    color: $white;
+    letter-spacing: 2px;
+    font-size: 18px;
+    background-color: $blue-dark;
+    text-transform: uppercase;
+    overflow: hidden;
+    z-index: 1;
+    transition: all 0.5s ease-out;
+    &::before {
+        position: absolute;
+        content: "";
+        width: 0px;
+        height: 0px;
+        border-bottom: 48px solid transparent;
+        border-right: 96px solid transparent;
+        display: block;
+    }
+    &:hover {
+        &::before {
+            border-bottom: 48px solid $blue-light;
+        }
+    }
+}

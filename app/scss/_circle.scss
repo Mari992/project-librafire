@@ -1,0 +1,12 @@
+%circle {
+    @include size(180px, 180px);
+    border-radius: 90px;
+    @media (max-width: 768px) {
+        @include size(220px, 220px);
+        border-radius: 120px;
+    }
+    @media (max-width:1200px) {
+        @include size(180px, 180px);
+        border-radius: 90px;
+    }
+}
